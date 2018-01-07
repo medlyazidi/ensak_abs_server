@@ -31,15 +31,16 @@ server.listen(3000,function(){
 io.on('connection', function (socket) {
 
   socket.on('login',function(data){
-    console.log(data);
+    
   		connect.query("SELECT * FROM utilisateur WHERE email = ? AND password = ? LIMIT 1",[data.userName,data.userPass],function(error, rows){
         if (error) {
           console.log("Error in the query");
         }else {
+
             socket.emit('login', {
                   "rows": rows[0]
                 }); 
-          //
+          console.log(rows[0].role);
         }
       });      
   });
