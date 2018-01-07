@@ -1,0 +1,10 @@
+{
+ "name": "absence",
+ "version": "0.0.1",
+ "private": "true",
+ "dependencies": {
+  "express": "4.15.4",
+  "mysql": "2.14.1",
+  "socket.io": "2.0.3"
+ }
+}
